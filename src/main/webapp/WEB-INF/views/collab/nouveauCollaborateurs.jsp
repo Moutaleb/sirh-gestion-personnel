@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +77,7 @@
 
 		</fieldset>
 	</form>
-
+   <a href="<c:url value='/collaborateurs/lister'></c:url>" class="btn btn-primary">Liste Collaborateur</a>
 
 </body>
 </html>

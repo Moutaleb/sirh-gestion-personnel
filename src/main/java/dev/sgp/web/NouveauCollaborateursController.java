@@ -30,17 +30,17 @@ public class NouveauCollaborateursController extends HttpServlet {
 		
 //		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 //		formatter = formatter.withLocale(Locale.FRANCE);
-//		LocalDate dateNaissance = LocalDate.parse(dateNaissanceBefore, formatter);
+//     	LocalDate dateNaissance = LocalDate.parse(dateNaissanceBefore, formatter);
 //		
 		
 		String adresse = request.getParameter("adresse");
-		String numsecu = request.getParameter("numsecu");
+		String numsecu = request.getParameter("numéroDeSecuSociale");
 		
 		String emailPro = prenom + "." + nom + "@societe.com" ;
 		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,emailPro);
 		collab.setNom(nom);
 		collab.setPrenom(prenom);
-		//collab.setDateDeNaissance(dateDeNaissance);
+		collab.setDateDeNaissance(dateDeNaissance);
 		collab.setNuméroDeSecuSociale(numsecu);
 		
 		collab.setAdresse(adresse);	
@@ -48,10 +48,10 @@ public class NouveauCollaborateursController extends HttpServlet {
 		
 		collabService.sauvegarderCollaborateur(collab);	
 		
-		List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
+		//List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
 
-        request.setAttribute("collaborateurs", collaborateurs);
-        doGet(request, response);
+        //request.setAttribute("collaborateurs", collaborateurs);
+        //doGet(request, response);
 	}
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

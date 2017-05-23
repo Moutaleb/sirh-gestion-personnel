@@ -45,8 +45,8 @@ public class Collaborateur {
 		return this.DateDeNaissance;
 	}
 
-	public void setDateDeNaissance(LocalDate dateDeNaissance) {
-		this.DateDeNaissance = DateDeNaissance;
+	public void setDateDeNaissance(String dateDeNaissance) {
+		this.DateDeNaissance = dateDeNaissance;
 	}
 
 	public String getAdresse() {
