@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import dev.sgp.entite.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
+@WebServlet("/collaborateur/nouveau")
 public class NouveauCollaborateursController extends HttpServlet {
 
 	// récupération du service

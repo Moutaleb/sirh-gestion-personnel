@@ -8,11 +8,15 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
 import dev.sgp.entite.VisiteWeb;
 import dev.sgp.util.Constantes;
 
+
+@WebFilter(urlPatterns = { "/*" },
+description = "Request timer filter")
 public class FrequentationFilter implements Filter {
 	private FilterConfig config = null;
 

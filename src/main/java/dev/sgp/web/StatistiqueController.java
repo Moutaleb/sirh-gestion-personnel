@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import dev.sgp.service.VisiteWebService;
 import dev.sgp.util.Constantes;
 
+
+@WebServlet("/collaborateur/statistique")
 public class StatistiqueController  extends HttpServlet  {
 	
 	// récupération du service
