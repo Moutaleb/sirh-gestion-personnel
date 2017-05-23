@@ -22,7 +22,6 @@
 
 	<!-- Liste des noms -->
 
-	
 
 		<a href="<c:url value='/collaborateur/nouveau'></c:url>" class="btn btn-primary">Nouveau Collaborateur</a>
 	<div class="table-responsive">
@@ -44,9 +43,6 @@
 			   </tr>
 		</c:forEach>
 	</ul>
-
-		
-
 
 </body>
 

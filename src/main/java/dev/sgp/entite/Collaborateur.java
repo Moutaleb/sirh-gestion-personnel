@@ -19,7 +19,7 @@ public class Collaborateur {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
-		this.DateDeNaissance = DateDeNaissance;
+		this.DateDeNaissance = dateDeNaissance;
 		Adresse = adresse;
 		NuméroDeSecuSociale = numéroDeSecuSociale;
 		this.emailPro = emailPro;
