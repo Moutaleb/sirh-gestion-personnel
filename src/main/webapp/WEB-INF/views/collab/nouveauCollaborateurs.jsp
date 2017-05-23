@@ -40,7 +40,7 @@
 				<label class="col-md-4 control-label" for="textinput">Date
 					de naissance</label>
 				<div class="col-md-4">
-					<input id="textinput" name="dateDeNaissance" type="text"
+					<input id="textinput" name="dateDeNaissance" type="date"
 						placeholder="" class="form-control input-md" required="">
 
 				</div>
