@@ -25,7 +25,7 @@ public class StatistiqueController  extends HttpServlet  {
 			
 			
 			// A ajouter
-			req.setAttribute("listeVisite", listeVisite.visiteCollaborateurs());
+			req.setAttribute("VisiteLog", listeVisite.construireStatistiques());
 			req.getRequestDispatcher("/WEB-INF/views/collab/statistiquesCollaborateurs.jsp").forward(req, resp);
 
 		}

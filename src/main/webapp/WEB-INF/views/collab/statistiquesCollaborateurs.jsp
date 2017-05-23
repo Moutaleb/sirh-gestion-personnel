@@ -25,16 +25,18 @@
 			  <table class="table">
 			  <tr>
                   <th>Chemin</th>
-                  <th>Temps execution</th>
-                  <th>Nombre vivistes</th>
-                  <th>Min</th>
-                  <th>Max</th>
+                  <th>Nombre visites</th>
+                  <th>Min (ms)</th>
+                  <th>Max (ms)</th>
                   <th>Moyenne</th>
                   </tr>
-		<c:forEach var="visite" items="${listeVisite}">
+		<c:forEach var="visite" items="${VisiteLog}">
 			<tr>
-			  <td>${visite.chemin}</td> 
-			  <td>${visite.tempsExecution}</td>
+			  <td>${visite.chemin}</td>
+			  <td>${visite.nbVisites}</td>
+			  <td>${visite.min}</td>
+			  <td>${visite.max}</td>
+			  <td>${visite.moyenne}</td> 
 			   </tr>
 		</c:forEach>
 		 </table>
