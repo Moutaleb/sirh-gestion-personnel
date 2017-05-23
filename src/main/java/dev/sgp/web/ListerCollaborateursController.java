@@ -1,29 +1,34 @@
 package dev.sgp.web;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.util.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dev.sgp.entite.Collaborateur;
+import dev.sgp.service.CollaborateurService;
+import dev.sgp.util.Constantes;
+
 public class ListerCollaborateursController extends HttpServlet {
 
-@Override
+	// récupération du service
 
-protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
+	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
 
-ServletException, IOException {
+	@Override
 
-// A ajouter
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-req.setAttribute("listeNoms", Arrays.asList("Robert", "Jean", "Hugues"));
+		// A ajouter
 
-req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp")
+		req.setAttribute("listecollaborateurs", collabService.listerCollaborateurs());
 
-.forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp").forward(req, resp);
 
-}
+	}
 
 }
