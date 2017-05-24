@@ -3,12 +3,13 @@ package dev.sgp.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 
 import dev.sgp.entite.CollabEvt;
 
-@ApplicationScoped
+@Stateless
 public class ActiviteService {
 
 	private List<CollabEvt> listActivite = new ArrayList<CollabEvt>();

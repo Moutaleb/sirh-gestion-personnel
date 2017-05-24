@@ -1,8 +1,15 @@
 package dev.sgp.entite;
 import java.time.*;
+import java.util.UUID;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
 @Entity
+@Table(name="collaborateur")
 public class Collaborateur {
+	
+	@javax.persistence.Id
 	String matricule;
 	String nom;
 	String prenom;
@@ -11,24 +18,34 @@ public class Collaborateur {
 	String NuméroDeSecuSociale;
 	String emailPro;
 	String photo;
-	ZonedDateTime dateHeureCreation;
+	String dateHeureCreation;
 	Boolean actif;
 	
-	public Collaborateur(String nom, String prenom, String dateDeNaissance, String adresse,
-			String numéroDeSecuSociale,String emailPro) {
+	public Collaborateur() {
 		super();
+	}
+	
+	public Collaborateur(String nom, String prenom, String dateDeNaissance, String adresse,
+			String numéroDeSecuSociale, String emailPro, String photo, String dateHeureCreation) {
+		super();
+		this.matricule = UUID.randomUUID().toString();;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.DateDeNaissance = dateDeNaissance;
+		DateDeNaissance = dateDeNaissance;
 		Adresse = adresse;
 		NuméroDeSecuSociale = numéroDeSecuSociale;
 		this.emailPro = emailPro;
-		this.matricule = nom.substring(0,2);
+		this.photo = photo;
+		this.dateHeureCreation = dateHeureCreation;
+		
 	}
+	
 
 	public String getNom() {
 		return nom;
 	}
+
+	
 
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -72,5 +89,37 @@ public class Collaborateur {
 
 	public void setMatricule(String matricule) {
 		this.matricule = matricule;
+	}
+
+	public String getEmailPro() {
+		return emailPro;
+	}
+
+	public void setEmailPro(String emailPro) {
+		this.emailPro = emailPro;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getDateHeureCreation() {
+		return dateHeureCreation;
+	}
+
+	public void setDateHeureCreation(String dateHeureCreation) {
+		this.dateHeureCreation = dateHeureCreation;
+	}
+
+	public Boolean getActif() {
+		return actif;
+	}
+
+	public void setActif(Boolean actif) {
+		this.actif = actif;
 	}
 }

@@ -8,11 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import dev.sgp.service.ActiviteService;
-import dev.sgp.service.CollaborateurService;
-import dev.sgp.service.VisiteWebService;
-
 
 
 @WebServlet("/collaborateur/activités")
@@ -25,9 +21,7 @@ public class ActiviteController  extends HttpServlet  {
 			// A ajouter
 			req.setAttribute("ActiviteLog", listeActivites.listerActivitesCollab());
 			req.getRequestDispatcher("/WEB-INF/views/collab/activiteCollaborateurs.jsp").forward(req, resp);
-
 		}
-
 	}
 
 

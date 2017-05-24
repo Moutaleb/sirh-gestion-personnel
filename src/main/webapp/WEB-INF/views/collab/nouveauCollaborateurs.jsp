@@ -60,8 +60,8 @@
 				<label class="col-md-4 control-label" for="textinput">Numéro
 					de sécurité sociale </label>
 				<div class="col-md-4">
-					<input id="textinput" name="numsecu" type="text" placeholder=""
-						class="form-control input-md" required title="15">
+					<input id="textinput" name="numeroDeSecuSociale" type="text" placeholder=""
+						class="form-control input-md"  required="" maxlength="15">
 
 				</div>
 			</div>
@@ -70,14 +70,21 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="singlebutton"></label>
 				<div class="col-md-4">
-					<button id="singlebutton" name="name"
-						class="btn btn-primary">Créer</button>
+					<button id="singlebutton" name="name" class="btn btn-primary">Créer</button>
 				</div>
-			</div>
 
+			</div>
+				<a href="<c:url value='/collaborateurs/lister'></c:url>"
+					class="btn btn-primary">Liste Collaborateurs</a> <a
+					href="<c:url value='/collaborateur/nouveau'></c:url>"
+					class="btn btn-primary">Nouveau Collaborateur</a> <a
+					href="<c:url value='/collaborateur/statistique'></c:url>"
+					class="btn btn-primary">Liste Statistiques</a> <a
+					href="<c:url value='/collaborateur/activités'></c:url>"
+					class="btn btn-primary">Liste Activités</a>
 		</fieldset>
 	</form>
-   <a href="<c:url value='/collaborateurs/lister'></c:url>" class="btn btn-primary">Liste Collaborateur</a>
+
 
 </body>
 </html>

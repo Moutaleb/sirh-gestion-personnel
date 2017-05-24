@@ -21,27 +21,35 @@
 	<h1>Statistiques</h1>
 
 	<!-- Liste des noms -->
-<div class="table-responsive">
-			  <table class="table">
-			  <tr>
-                  <th>Chemin</th>
-                  <th>Nombre visites</th>
-                  <th>Min (ms)</th>
-                  <th>Max (ms)</th>
-                  <th>Moyenne</th>
-                  </tr>
-		<c:forEach var="visite" items="${VisiteLog}">
+	<div class="table-responsive">
+		<table class="table">
 			<tr>
-			  <td>${visite.chemin}</td>
-			  <td>${visite.nbVisites}</td>
-			  <td>${visite.min}</td>
-			  <td>${visite.max}</td>
-			  <td>${visite.moyenne}</td> 
-			   </tr>
-		</c:forEach>
-		 </table>
-		 </div>
-
+				<th>Chemin</th>
+				<th>Nombre visites</th>
+				<th>Min (ms)</th>
+				<th>Max (ms)</th>
+				<th>Moyenne</th>
+			</tr>
+			<c:forEach var="visite" items="${VisiteLog}">
+				<tr>
+					<td>${visite.chemin}</td>
+					<td>${visite.nbVisites}</td>
+					<td>${visite.min}</td>
+					<td>${visite.max}</td>
+					<td>${visite.moyenne}</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<a href="<c:url value='/collaborateurs/lister'></c:url>"
+		class="btn btn-primary">Liste Collaborateurs</a>
+	<a href="<c:url value='/collaborateur/nouveau'></c:url>"
+		class="btn btn-primary">Nouveau Collaborateur</a>
+	<a href="<c:url value='/collaborateur/statistique'></c:url>"
+		class="btn btn-primary">Liste Statistiques</a>
+	<a href="<c:url value='/collaborateur/activités'></c:url>"
+		class="btn btn-primary">Liste Activités</a>
+	</div>
+	
 </body>
 
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 
 import static java.util.stream.Collectors.*;
@@ -12,7 +13,7 @@ import static java.util.stream.Collectors.*;
 import dev.sgp.entite.VisiteLog;
 import dev.sgp.entite.VisiteWeb;
 
-@ApplicationScoped
+@Stateless
 public class VisiteWebService {
 
 	List<VisiteWeb> listeVisites = new ArrayList<>();

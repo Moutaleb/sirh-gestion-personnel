@@ -21,20 +21,28 @@
 	<h1>Activités</h1>
 
 	<!-- Liste des noms -->
-<div class="table-responsive">
-			  <table class="table">
-			  <tr>
-                  <th>Date/Heure</th>
-                  <th>Libellé</th>
-                  </tr>
-		<c:forEach var="activite" items="${ActiviteLog}">
+	<div class="table-responsive">
+		<table class="table">
 			<tr>
-			  <td>${activite.dateHeure}</td>
-			  <td>${activite.type} - matricule: ${activite.matricule}</td>
-			   </tr>
-		</c:forEach>
-		 </table>
-		 </div>
+				<th>Date/Heure</th>
+				<th>Libellé</th>
+			</tr>
+			<c:forEach var="activite" items="${ActiviteLog}">
+				<tr>
+					<td>${activite.dateHeure}</td>
+					<td>${activite.type}-matricule: ${activite.matricule}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+	<a href="<c:url value='/collaborateurs/lister'></c:url>"
+		class="btn btn-primary">Liste Collaborateurs</a>
+	<a href="<c:url value='/collaborateur/nouveau'></c:url>"
+		class="btn btn-primary">Nouveau Collaborateur</a>
+	<a href="<c:url value='/collaborateur/statistique'></c:url>"
+		class="btn btn-primary">Liste Statistiques</a>
+	<a href="<c:url value='/collaborateur/activités'></c:url>"
+		class="btn btn-primary">Liste Activités</a>
 
 </body>
 

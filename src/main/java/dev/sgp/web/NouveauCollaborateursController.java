@@ -1,6 +1,8 @@
 package dev.sgp.web;
 
 import java.io.IOException;
+import java.time.ZonedDateTime;
+
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,10 +36,13 @@ public class NouveauCollaborateursController extends HttpServlet {
 //		
 		
 		String adresse = request.getParameter("adresse");
-		String numsecu = request.getParameter("numéroDeSecuSociale");
+		String numsecu = request.getParameter("numeroDeSecuSociale");
+		String photo = request.getParameter("photo");
+		String dateHeureCreation = request.getParameter("dateHeureCreation");
+		String actif = request.getParameter("actif");
 		
 		String emailPro = prenom + "." + nom + "@societe.com" ;
-		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,emailPro);
+		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,emailPro,photo,dateHeureCreation);
 		collab.setNom(nom);
 		collab.setPrenom(prenom);
 		collab.setDateDeNaissance(dateDeNaissance);
