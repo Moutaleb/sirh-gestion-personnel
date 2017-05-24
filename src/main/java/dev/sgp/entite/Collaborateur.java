@@ -23,6 +23,7 @@ public class Collaborateur {
 		Adresse = adresse;
 		NuméroDeSecuSociale = numéroDeSecuSociale;
 		this.emailPro = emailPro;
+		this.matricule = nom.substring(0,2);
 	}
 
 	public String getNom() {
@@ -63,5 +64,13 @@ public class Collaborateur {
 
 	public void setNuméroDeSecuSociale(String numéroDeSecuSociale) {
 		NuméroDeSecuSociale = numéroDeSecuSociale;
+	}
+
+	public String getMatricule() {
+		return matricule;
+	}
+
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
 	}
 }
