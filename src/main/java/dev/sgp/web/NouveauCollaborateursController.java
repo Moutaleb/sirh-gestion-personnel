@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dev.sgp.entite.Collaborateur;
+import dev.sgp.entite.Departement;
 import dev.sgp.service.CollaborateurService;
 
 
@@ -38,7 +39,7 @@ public class NouveauCollaborateursController extends HttpServlet {
 		String adresse = request.getParameter("adresse");
 		String numsecu = request.getParameter("numeroDeSecuSociale");
 
-		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu);
+		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,new Departement());
 		collab.setNom(nom);
 		collab.setPrenom(prenom);
 		collab.setDateDeNaissance(dateDeNaissance);
