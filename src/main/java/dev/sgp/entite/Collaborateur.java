@@ -2,6 +2,7 @@ package dev.sgp.entite;
 import java.time.*;
 import java.util.UUID;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -10,33 +11,35 @@ import javax.persistence.Table;
 public class Collaborateur {
 	
 	@javax.persistence.Id
-	String matricule;
-	String nom;
-	String prenom;
-	String DateDeNaissance;
-	String Adresse;
-	String NuméroDeSecuSociale;
-	String emailPro;
-	String photo;
-	String dateHeureCreation;
-	Boolean actif;
+	private String matricule;
+	private String nom;
+	private String prenom;
+	private String DateDeNaissance;
+	private String Adresse;
+	private String NuméroDeSecuSociale;
+	private String emailPro;
+	private String photo;
+	private String dateHeureCreation;
+	private Boolean actif;
+	@ManyToOne
+	private Departement departement;
 	
 	public Collaborateur() {
 		super();
 	}
 	
 	public Collaborateur(String nom, String prenom, String dateDeNaissance, String adresse,
-			String numéroDeSecuSociale, String emailPro, String photo, String dateHeureCreation) {
+			String numéroDeSecuSociale, Departement departement) {
 		super();
-		this.matricule = UUID.randomUUID().toString();;
+		this.matricule = nom+prenom;
 		this.nom = nom;
 		this.prenom = prenom;
 		DateDeNaissance = dateDeNaissance;
 		Adresse = adresse;
 		NuméroDeSecuSociale = numéroDeSecuSociale;
-		this.emailPro = emailPro;
-		this.photo = photo;
-		this.dateHeureCreation = dateHeureCreation;
+		this.emailPro = prenom + "." + nom + "@societe.com";
+		this.dateHeureCreation = LocalDate.now().toString();
+		this.departement = departement;
 		
 	}
 	
@@ -121,5 +124,13 @@ public class Collaborateur {
 
 	public void setActif(Boolean actif) {
 		this.actif = actif;
+	}
+
+	public Departement getDepartement() {
+		return departement;
+	}
+
+	public void setDepartement(Departement departement) {
+		this.departement = departement;
 	}
 }

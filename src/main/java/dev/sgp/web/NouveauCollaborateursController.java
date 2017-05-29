@@ -37,12 +37,8 @@ public class NouveauCollaborateursController extends HttpServlet {
 		
 		String adresse = request.getParameter("adresse");
 		String numsecu = request.getParameter("numeroDeSecuSociale");
-		String photo = request.getParameter("photo");
-		String dateHeureCreation = request.getParameter("dateHeureCreation");
-		String actif = request.getParameter("actif");
-		
-		String emailPro = prenom + "." + nom + "@societe.com" ;
-		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,emailPro,photo,dateHeureCreation);
+
+		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu);
 		collab.setNom(nom);
 		collab.setPrenom(prenom);
 		collab.setDateDeNaissance(dateDeNaissance);
