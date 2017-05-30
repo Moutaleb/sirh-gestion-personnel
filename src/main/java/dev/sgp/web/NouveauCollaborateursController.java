@@ -1,8 +1,6 @@
 package dev.sgp.web;
 
 import java.io.IOException;
-import java.time.ZonedDateTime;
-
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dev.sgp.entite.Banque;
 import dev.sgp.entite.Collaborateur;
 import dev.sgp.entite.Departement;
 import dev.sgp.service.CollaborateurService;
@@ -34,18 +33,23 @@ public class NouveauCollaborateursController extends HttpServlet {
 //		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 //		formatter = formatter.withLocale(Locale.FRANCE);
 //     	LocalDate dateNaissance = LocalDate.parse(dateNaissanceBefore, formatter);
-//		
+
 		
 		String adresse = request.getParameter("adresse");
 		String numsecu = request.getParameter("numeroDeSecuSociale");
 
-		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,new Departement());
+
+
+		Collaborateur collab = new Collaborateur(nom,prenom,dateDeNaissance,adresse,numsecu,new Departement(),new Banque());
 		collab.setNom(nom);
 		collab.setPrenom(prenom);
 		collab.setDateDeNaissance(dateDeNaissance);
-		collab.setNuméroDeSecuSociale(numsecu);
-		
+		collab.setNuméroDeSecuSociale(numsecu);		
 		collab.setAdresse(adresse);	
+
+	
+	
+		
 		//collaborateurs.add(collab);
 		
 		collabService.sauvegarderCollaborateur(collab);	

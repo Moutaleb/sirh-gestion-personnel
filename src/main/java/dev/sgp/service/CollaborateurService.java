@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import dev.sgp.entite.Banque;
 import dev.sgp.entite.CollabEvt;
 import dev.sgp.entite.Collaborateur;
 import dev.sgp.entite.TypeCollabEvt;
@@ -78,6 +79,11 @@ public class CollaborateurService {
         collaborateur.setDepartement(collab.getDepartement());
         collaborateur.setPhoto(collab.getPhoto());
         em.merge(collaborateur);
-}
+}/*
+	public void editerCollaborateursrib(Banque bank) {
 
+		Banque banque = em.find(Collaborateur.class, bank.get());
+		banque.setBanque(bank.getBanque());
+        em.merge(banque);
+}*/
 }

@@ -11,6 +11,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 		<jta-data-source>jdbc/sgp-ds</jta-data-source>
 		<class>dev.sgp.entite.Collaborateur</class>
 		<class>dev.sgp.entite.Departement</class>
+		<class>dev.sgp.entite.Banque</class>
 
 		<properties>
 

@@ -14,7 +14,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
+import dev.sgp.entite.Banque;
 import dev.sgp.entite.Collaborateur;
+import dev.sgp.service.BanqueService;
 import dev.sgp.service.CollaborateurService;
 
 
@@ -22,6 +24,7 @@ import dev.sgp.service.CollaborateurService;
 public class CollaborateurResource {
 
 	@Inject CollaborateurService collabservice;
+	@Inject BanqueService bankservice;
 
 	/*@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -62,5 +65,22 @@ public class CollaborateurResource {
       builder.language("fr").header("Content-type", "text/html");
     return builder.build();
     }
+	
+	@GET
+	@Path("/{matricule}/banque") 
+	@Produces(MediaType.APPLICATION_JSON)
+	public Banque getMatriculeBanque(@PathParam("matricule") String matricule) {
 
+		return collabservice.listerCollaborateursMatricule(matricule).getBanque();
+
+	}
+	@PUT
+    @Path("/{matricule}/banque")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updaterib(Banque bank) {      
+		bankservice.editerbanque(bank);
+      ResponseBuilder builder = Response.ok("texte");
+      builder.language("fr").header("Content-type", "text/html");
+    return builder.build();
+    }
 }

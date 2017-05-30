@@ -3,11 +3,11 @@ import java.time.*;
 import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="collaborateur")
 public class Collaborateur {
 	
 	@javax.persistence.Id
@@ -23,13 +23,19 @@ public class Collaborateur {
 	private Boolean actif;
 	@ManyToOne
 	private Departement departement;
+	@OneToOne
+	private Banque banque;
+	
+
+
+	
 	
 	public Collaborateur() {
 		super();
 	}
 	
 	public Collaborateur(String nom, String prenom, String dateDeNaissance, String adresse,
-			String numéroDeSecuSociale, Departement departement) {
+			String numéroDeSecuSociale, Departement departement, Banque banque) {
 		super();
 		this.matricule = nom+prenom;
 		this.nom = nom;
@@ -40,6 +46,9 @@ public class Collaborateur {
 		this.emailPro = prenom + "." + nom + "@societe.com";
 		this.dateHeureCreation = LocalDate.now().toString();
 		this.departement = departement;
+		this.banque = banque;
+
+
 		
 	}
 	
@@ -132,5 +141,13 @@ public class Collaborateur {
 
 	public void setDepartement(Departement departement) {
 		this.departement = departement;
+	}
+
+	public Banque getBanque() {
+		return banque;
+	}
+
+	public void setBanque(Banque banque) {
+		this.banque = banque;
 	}
 }
